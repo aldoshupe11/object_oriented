@@ -1,5 +1,20 @@
 public class Builder{
     
+    private static Builder m_instance;
+    
+    private Builder(){
+        
+    }
+    
+    public static Builder getInstance(){
+        if(m_instance == null){
+            m_instance = new Builder();
+            return m_instance;
+        }else{
+            return m_instance;
+        }
+    }
+    
     public IDecision buildWizard(){
         IDecision dec1 = new Decision("Do you want to buy a snowboard?");
         IDecision dec2 = new Decision("Have you snowboarded before?");

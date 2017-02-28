@@ -31,19 +31,19 @@ public class Decision implements IDecision{
         
         System.out.println(m_question);
         Scanner read = new Scanner(System.in);
-        String in = read.next();
+        String in = read.next().toLowerCase();
         
-        if(in.toLowerCase() == "y" && m_yes != null){
+        if(in.equals("y") && m_yes != null){
             return m_yes;
-        }else if(in.toLowerCase() == "n" && m_no != null){
+        }else if(in.equals("n") && m_no != null){
             return m_no;
-        }else if(in.toLowerCase() == "y" && m_yes == null){
+        }else if(in.equals("y") && m_yes == null){
             System.out.println(m_yesTerminal);
             return null;
-        }else if(in.toLowerCase() == "n" && m_no == null){
+        }else if(in.equals("n") && m_no == null){
             System.out.println(m_noTerminal);
             return null;
-        }
-        return null;
+        }else
+            return null;
     }
 }
